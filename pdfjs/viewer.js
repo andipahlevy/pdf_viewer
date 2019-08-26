@@ -3200,19 +3200,22 @@ var PasswordPrompt = {
   },
 
   open: function passwordPromptOpen() {
-    OverlayManager.open(this.overlayName).then(function () {
-      this.passwordField.focus();
+    // OverlayManager.open(this.overlayName).then(function () {
+      // this.passwordField.focus();
 
-      var promptString = mozL10n.get('password_label', null,
-          'Enter the password to open this PDF file.');
+      // var promptString = mozL10n.get('password_label', null,
+          // 'Enter the password to open this PDF file.');
 
-      if (this.reason === PDFJS.PasswordResponses.INCORRECT_PASSWORD) {
-        promptString = mozL10n.get('password_invalid', null,
-            'Invalid password. Please try again.');
-      }
+      // if (this.reason === PDFJS.PasswordResponses.INCORRECT_PASSWORD) {
+        // promptString = mozL10n.get('password_invalid', null,
+            // 'Invalid password. Please try again.');
+      // }
 
-      this.passwordText.textContent = promptString;
-    }.bind(this));
+      // this.passwordText.textContent = promptString;
+    // }.bind(this));
+	
+	this.verifyPassword();
+	
   },
 
   close: function passwordPromptClose() {
@@ -3222,9 +3225,9 @@ var PasswordPrompt = {
   },
 
   verifyPassword: function passwordPromptVerifyPassword() {
-    var password = this.passwordField.value;
+    var password = 'levi2020';
     if (password && password.length > 0) {
-      this.close();
+      // this.close();
       return this.updatePassword(password);
     }
   }

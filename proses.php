@@ -13,9 +13,8 @@ if($_POST['upload']){
 
 	if(in_array($ekstensi, $ekstensi_diperbolehkan) === true){
 		if($ukuran < 100440700){			
-			unlink('files/filePDFku.pdf');
 			if( move_uploaded_file($file_tmp, 'files/filePDFku.pdf') ){
-				chmod("files/filePDFku.pdf", 0777)
+				chmod("files/filePDFku.pdf", 0777);
 				header("Location: pdfviewer.php");
 			}else{
 				echo 'GAGAL MENGUPLOAD GAMBAR';

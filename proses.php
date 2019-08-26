@@ -13,7 +13,7 @@ if($_POST['upload']){
 
 	if(in_array($ekstensi, $ekstensi_diperbolehkan) === true){
 		if($ukuran < 100440700){			
-			move_uploaded_file($file_tmp, 'uploads/filePDFku.pdf')
+			move_uploaded_file($file_tmp, 'files/filePDFku.pdf')
 			// if( move_uploaded_file($file_tmp, 'uploads/filePDFku.pdf') ){
 				header("Location: pdfviewer.php");
 			// }else{

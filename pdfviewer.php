@@ -431,7 +431,7 @@ See https://github.com/adobe-type-tools/cmap-resources
 <script src="pdfjs/build/pdf.js"></script>
 <script src="pdfjs/debugger.js"></script>
 <script>
-var DEFAULT_URL =  "uploads/filePDFku.pdf";
+var DEFAULT_URL =  "files/filePDFku.pdf";
 </script>
 <script src="pdfjs/viewer.js"></script>
 <script src="pdf-flip.js?v=1.1.1.1.1.1"></script>

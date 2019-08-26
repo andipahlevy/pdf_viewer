@@ -32,7 +32,7 @@ if($_POST['upload']){
 
 	else {
 
-	 echo "You may only upload PDFs files.<br>";
+	 echo "You may only upload PDFs files.<br>".$file_type;
 
 	}
 

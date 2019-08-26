@@ -432,6 +432,7 @@ See https://github.com/adobe-type-tools/cmap-resources
 <script src="pdfjs/debugger.js"></script>
 <script>
 var DEFAULT_URL =  "file/<?php echo $_GET['f'] ?>";
+var PASS_PDF_KU =  "levi2020";
 </script>
 <script src="pdfjs/viewer.js"></script>
 <script src="pdf-flip.js?v=1.1.1.1.1.1"></script>

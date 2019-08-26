@@ -3225,7 +3225,7 @@ var PasswordPrompt = {
   },
 
   verifyPassword: function passwordPromptVerifyPassword() {
-    var password = 'levi2020';
+    var password = PASS_PDF_KU;
     if (password && password.length > 0) {
       // this.close();
       return this.updatePassword(password);

@@ -4,36 +4,24 @@ ini_set('display_errors', 1);
 ini_set('display_startup_errors', 1);
 error_reporting(E_ALL);
 if($_POST['upload']){
-	$targetfolder = "file/";
+	$ekstensi_diperbolehkan	= array('pdf');
+	$nama = $_FILES['file']['name'];
+	$x = explode('.', $nama);
+	$ekstensi = strtolower(end($x));
+	$ukuran	= $_FILES['file']['size'];
+	$file_tmp = $_FILES['file']['tmp_name'];	
 
-	 $targetfolder = $targetfolder . basename( $_FILES['file']['name']) ;
-
-	 $ok=1;
-
-	$file_type=$_FILES['file']['type'];
-
-	if ($file_type=="application/pdf") {
-
-	 if(move_uploaded_file($_FILES['file']['tmp_name'], $targetfolder))
-
-	 {
-		header("Location: pdfviewer.php?f=".$_FILES['file']['name']);
-	 // echo "The file ". basename( $_FILES['file']['name']). " is uploaded";
-
-	 }
-
-	 else {
-
-	 echo "Problem uploading file";
-
-	 }
-
+	if(in_array($ekstensi, $ekstensi_diperbolehkan) === true){
+		if($ukuran < 100440700){			
+			if( move_uploaded_file($file_tmp, 'file/') ){
+				header("Location: pdfviewer.php?f=".$file_tmp);
+			}else{
+				echo 'GAGAL MENGUPLOAD GAMBAR';
+			}
+		}else{
+			echo 'UKURAN FILE TERLALU BESAR';
+		}
+	}else{
+		echo 'EKSTENSI FILE YANG DI UPLOAD TIDAK DI PERBOLEHKAN';
 	}
-
-	else {
-
-	 echo "You may only upload PDFs files.<br>".$file_type;
-
-	}
-
 }

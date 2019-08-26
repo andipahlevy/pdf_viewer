@@ -1,4 +1,5 @@
 <?php
+ini_set('max_execution_time', 300); 
 if($_POST['upload']){
 	$ekstensi_diperbolehkan	= array('pdf');
 	$nama = $_FILES['file']['name'];
